@@ -1,25 +1,19 @@
+
+
+import { useNavigate } from 'react-router-dom'; //use navigate hook
 import './App.css';
 
+
 function App() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Welcome to React Project</h1>
-        <button className='users-button'>User</button>
+        <button className='users-button' onClick={() => navigate('/users')}>Users</button>
 
-
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
 
 
 
