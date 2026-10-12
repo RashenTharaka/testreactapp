@@ -19,7 +19,7 @@ const Users = () => {
     }, []);
 
     const getUsers = () => {
-        Axios.get('http://localhost:3001/api/users')
+        Axios.get(process.env.REACT_APP_ENDPOINT + '/api/users')
             .then(response => {
                 setUsers(response.data?.response || []);
             })
@@ -37,7 +37,7 @@ const Users = () => {
         };
 
         Axios.post(
-            'http://localhost:3001/api/createuser',
+            process.env.REACT_APP_ENDPOINT + '/api/createuser',
             payload
         )
             .then(() => {
@@ -60,7 +60,7 @@ const Users = () => {
         };
 
         Axios.post(
-            'http://localhost:3001/api/updateuser',
+            process.env.REACT_APP_ENDPOINT + '/api/updateuser',
             payload
         )
             .then(() => {
@@ -75,9 +75,8 @@ const Users = () => {
     };
 
     const deleteUser = (id) => {
-
         Axios.post(
-            'http://localhost:3001/api/deleteuser',
+            process.env.REACT_APP_ENDPOINT + '/api/deleteuser',
             { id: id }
         )
             .then(() => {
